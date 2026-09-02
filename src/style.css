@@ -2,7 +2,7 @@ body {
   margin: 0;
   min-height: 100vh;
   position: relative;
-  background-color: #100224;
+  background-color: #080711;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -10,55 +10,73 @@ body {
   padding: 2rem 4rem;
 }
 
+/* Side decorative zigzag strips (Cyan & Neon Pink) */
 body::before,
 body::after {
   content: '';
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 40px;
-  background-color: #ff0055;
+  width: 35px;
   z-index: -1;
 }
 
 body::before {
   left: 0;
+  background-color: #00f3ff;
   clip-path: polygon(
-    0 0, 100% 0, 85% 5%, 100% 10%, 85% 15%, 100% 20%, 
-    85% 25%, 100% 30%, 85% 35%, 100% 40%, 85% 45%, 100% 50%, 
-    85% 55%, 100% 60%, 85% 65%, 100% 70%, 85% 75%, 100% 80%, 
-    85% 85%, 100% 90%, 85% 95%, 100% 100%, 0 100%
+    0 0, 100% 0, 80% 5%, 100% 10%, 80% 15%, 100% 20%, 
+    80% 25%, 100% 30%, 80% 35%, 100% 40%, 80% 45%, 100% 50%, 
+    80% 55%, 100% 60%, 80% 65%, 100% 70%, 80% 75%, 100% 80%, 
+    80% 85%, 100% 90%, 80% 95%, 100% 100%, 0 100%
   );
 }
 
 body::after {
   right: 0;
+  background-color: #ff007f;
   clip-path: polygon(
-    100% 0, 0 0, 15% 5%, 0 10%, 15% 15%, 0 20%, 
-    15% 25%, 0 30%, 15% 35%, 0 40%, 15% 45%, 0 50%, 
-    15% 55%, 0 60%, 15% 65%, 0 70%, 15% 75%, 0 80%, 
-    15% 85%, 0 90%, 15% 95%, 0 100%, 100% 100%
+    100% 0, 0 0, 20% 5%, 0 10%, 20% 15%, 0 20%, 
+    20% 25%, 0 30%, 20% 35%, 0 40%, 20% 45%, 0 50%, 
+    20% 55%, 0 60%, 20% 65%, 0 70%, 20% 75%, 0 80%, 
+    20% 85%, 0 90%, 20% 95%, 0 100%, 100% 100%
   );
 }
 
 #app {
-  max-width: 700px;
+  max-width: 750px;
   width: 100%;
   text-align: center;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.2);
+}
+
+/* Digital Clock */
+#clock {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: #00f3ff;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
 }
 
 h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 p {
   font-family: 'Black Ops One', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #dddddd;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #cbd5e1;
 }
 
 #app img,
@@ -68,13 +86,34 @@ p {
   height: 400px;
   width: 100%;
   object-fit: cover;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   border-radius: 8px;
+  border: 1px solid rgba(255, 0, 127, 0.5);
+}
+
+/* Full HD Button */
+.hd-btn {
+  display: inline-block;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  color: #080711;
+  background-color: #00f3ff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hd-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.8);
 }
 
 @media (max-width: 600px) {
   body {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   body::before,
